@@ -1,0 +1,47 @@
+1. Open PowerShell
+
+Press Start
+
+Type PowerShell
+
+Right-click and choose Run as Administrator
+
+(If testing under a standard user, run normally — but some checks may require elevation.)
+
+2. Download the Script
+
+Windows 10 and 11 come with curl and PowerShell’s Invoke-WebRequest, so you may use either method.
+
+Option A — Download with PowerShell (recommended)
+
+Run this command:
+
+iwr -Uri "https://raw.githubusercontent.com/mcdowellj43/Decian-risk-assessment-workgroup/main/scripts/windows-noadminpriv.ps1" -OutFile "windows-noadminpriv.ps1"
+
+Option B — Download with curl (also built-in)
+
+Run this command:
+
+curl -L "https://raw.githubusercontent.com/mcdowellj43/Decian-risk-assessment-workgroup/main/scripts/windows-noadminpriv.ps1" -o windows-noadminpriv.ps1
+
+
+This will save the script into the current folder as windows-noadminpriv.ps1.
+
+3. Allow PowerShell to Run Scripts (if required)
+
+Some systems block unsigned scripts.
+If PowerShell shows an execution policy error, run:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+
+(This only affects the current PowerShell window.)
+
+4. Run the Script
+
+Now execute:
+
+.\windows-noadminpriv.ps1
+
+
+The script will run checks and show PASS/FAIL items directly in the console.
